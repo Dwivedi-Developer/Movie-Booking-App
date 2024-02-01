@@ -1,25 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useContext, useEffect } from "react";
+import { Routes, Route} from "react-router-dom";
+import Home from "./pages/Home";
+import Movie from "./pages/Movie";
+import Ticket from "./components/Ticket";
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+   
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/movie/:id" element={<Movie />} /> 
+      <Route path="/ticket/:name" element={<Ticket />} /> 
+
+    </Routes>
   );
+  
 }
 
 export default App;
